@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/atombender/go-jsonschema/pkg/generator"
+	"github.com/deep-creek/go-jsonschema/pkg/generator"
 )
 
 var (

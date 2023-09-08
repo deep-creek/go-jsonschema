@@ -3,7 +3,7 @@ package codegen
 import (
 	"fmt"
 
-	"github.com/atombender/go-jsonschema/pkg/schemas"
+	"github.com/deep-creek/go-jsonschema/pkg/schemas"
 )
 
 var (

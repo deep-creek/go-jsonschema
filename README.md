@@ -18,13 +18,13 @@ This tool generates Go data types and structs that corresponds to definitions in
 
 ## Installing
 
-* **Download**: Get a release [here](https://github.com/atombender/go-jsonschema/releases).
+* **Download**: Get a release [here](https://github.com/deep-creek/go-jsonschema/releases).
 
 * **Install from source**: To install with Go 1.16+:
 
 ```shell
-$ go get github.com/atombender/go-jsonschema/...
-$ go install github.com/atombender/go-jsonschema/cmd/gojsonschema@latest
+$ go get github.com/deep-creek/go-jsonschema/...
+$ go install github.com/deep-creek/go-jsonschema/cmd/gojsonschema@latest
 ```
 
 * **Install with Brew**: To install with [Homebrew](https://brew.sh):
