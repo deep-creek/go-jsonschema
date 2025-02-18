@@ -8,8 +8,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/sanity-io/litter"
 
-	"github.com/atombender/go-jsonschema/pkg/codegen"
-	"github.com/atombender/go-jsonschema/pkg/mathutils"
+	"github.com/deep-creek/go-jsonschema/pkg/codegen"
+	"github.com/deep-creek/go-jsonschema/pkg/mathutils"
 )
 
 type validator interface {

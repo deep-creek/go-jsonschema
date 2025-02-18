@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	yamlv3 "gopkg.in/yaml.v3"
 
-	testAdditionalProperties "github.com/atombender/go-jsonschema/tests/data/core/additionalProperties"
-	test "github.com/atombender/go-jsonschema/tests/data/extraImports/gopkgYAMLv3"
+	testAdditionalProperties "github.com/deep-creek/go-jsonschema/tests/data/core/additionalProperties"
+	test "github.com/deep-creek/go-jsonschema/tests/data/extraImports/gopkgYAMLv3"
 )
 
 func TestYamlV3Unmarshal(t *testing.T) {

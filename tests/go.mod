@@ -1,17 +1,17 @@
-module github.com/atombender/go-jsonschema/tests
+module github.com/deep-creek/go-jsonschema/tests
 
 go 1.22.0
 
 toolchain go1.22.0
 
 replace (
-	github.com/atombender/go-jsonschema => ../
-	github.com/atombender/go-jsonschema/tests/helpers/other => ./helpers/other
+	github.com/deep-creek/go-jsonschema => ../
+	github.com/deep-creek/go-jsonschema/tests/helpers/other => ./helpers/other
 )
 
 require (
-	github.com/atombender/go-jsonschema v0.16.0
-	github.com/atombender/go-jsonschema/tests/helpers/other v0.0.0-20240909221408-bcba1cdc5eb2
+	github.com/deep-creek/go-jsonschema v0.16.0
+	github.com/deep-creek/go-jsonschema/tests/helpers/other v0.0.0-20240909221408-bcba1cdc5eb2
 	github.com/go-viper/mapstructure/v2 v2.1.0
 	github.com/stretchr/testify v1.9.0
 	gopkg.in/yaml.v3 v3.0.1
