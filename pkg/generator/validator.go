@@ -315,8 +315,6 @@ func (v *numericValidator) generate(out *codegen.Emitter) {
 	}
 
 	if v.multipleOf != nil {
-		out.Printlnf("{")
-		out.Indent(1)
 
 		if v.roundToInt {
 			out.Printlnf(`if %s %s%s %% %v != 0 {`, checkPointer, pointerPrefix, value, v.valueOf(*v.multipleOf))
@@ -327,8 +325,10 @@ func (v *numericValidator) generate(out *codegen.Emitter) {
 		} else {
 			if v.isNillable {
 				out.Printlnf(`if %s != nil {`, value)
-				out.Indent(1)
+			} else {
+				out.Printlnf("{")
 			}
+			out.Indent(1)
 			out.Printlnf("remainder := math.Mod(%s%s, %v)", pointerPrefix, value, v.valueOf(*v.multipleOf))
 			out.Printlnf(
 				`if !(math.Abs(remainder) < 1e-10 || math.Abs(remainder - %v) < 1e-10) {`, v.valueOf(*v.multipleOf))
@@ -337,14 +337,9 @@ func (v *numericValidator) generate(out *codegen.Emitter) {
 			out.Indent(-1)
 			out.Printlnf("}")
 
-			if v.isNillable {
-				out.Indent(-1)
-				out.Printlnf("}")
-			}
+			out.Indent(-1)
+			out.Printlnf("}")
 		}
-
-		out.Indent(-1)
-		out.Printlnf("}")
 	}
 
 	nMin, nMax, nMinExclusive, nMaxExclusive := mathutils.NormalizeBounds(
