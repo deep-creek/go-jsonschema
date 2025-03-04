@@ -171,6 +171,15 @@ func TestPattern(t *testing.T) {
 			data:    `{"myString": "0x123456"}`,
 			wantErr: errors.New("field MyString pattern match: must match ^0x[0-9a-f]{10}\\.$"),
 		},
+		{
+			desc: "no violations",
+			data: `{"myEscapedString": "${{SOME_VAR}}", "myString": "0x12345abcde."}`,
+		},
+		{
+			desc:    "myEscapedString does not match pattern",
+			data:    `{"myEscapedString": "${MISSING_CURLY_BRACKET}", "myString": "0x12345abcde."}`,
+			wantErr: errors.New("field MyEscapedString pattern match: must match ^\\$\\{\\{(.|[\\r\\n])*\\}\\}$"),
+		},
 	}
 
 	for _, tC := range testCases {
@@ -231,6 +240,10 @@ func TestMultipleOf(t *testing.T) {
 			data: `{"myInteger": 10, "myNumber": 2.4}`,
 		},
 		{
+			desc: "no violations bigger number",
+			data: `{"myInteger": 10, "myNumber": 482.6}`,
+		},
+		{
 			desc:    "myInt not a multiple of 2",
 			data:    `{"myInteger": 11, "myNumber": 2.4}`,
 			wantErr: errors.New("field myInteger: must be a multiple of 2"),
@@ -238,7 +251,7 @@ func TestMultipleOf(t *testing.T) {
 		{
 			desc:    "myNumber not a multiple of 1.2",
 			data:    `{"myInteger": 10, "myNumber": 2.5}`,
-			wantErr: errors.New("field myNumber: must be a multiple of 1.2"),
+			wantErr: errors.New("field myNumber: must be a multiple of 0.2"),
 		},
 	}
 
