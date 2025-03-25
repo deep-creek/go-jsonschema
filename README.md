@@ -2,7 +2,6 @@
 This fork is only an temporary fork until some pull requests have been integrated into https://github.com/omissis/go-jsonschema.
 
 ## pull requests included in fork
-* https://github.com/omissis/go-jsonschema/issues/378 - Regex patterns lose escape characters
 * https://github.com/omissis/go-jsonschema/pull/401 - fix multipleOf validation fails for small multipleOf with a higher number to validate due to precision
 * https://github.com/omissis/go-jsonschema/pull/406 - Add support for time zone offsets in json format "time" fields
 
@@ -10,11 +9,11 @@ This fork is only an temporary fork until some pull requests have been integrate
 If you need to use this fork instead of the original repo, add a **replace** statement in your _go.mod_:
 ```
 require (
-	github.com/atombender/go-jsonschema v0.17.0
+	github.com/atombender/go-jsonschema v0.18.0
 ...
 )
 ...
-replace github.com/atombender/go-jsonschema v0.17.0 => github.com/deep-creek/go-jsonschema v0.17.0-patched.1
+replace github.com/atombender/go-jsonschema v0.18.0 => github.com/deep-creek/go-jsonschema v0.18.0-patched.1
 ```
 
 If you replaced the package inside you _go.mod_, you can also just use go run to generate the en-/decoding stubs:
